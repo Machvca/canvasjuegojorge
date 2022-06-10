@@ -12,6 +12,9 @@ raquetaDImage.src = "raquetaD.png";
 let raquetaIImage = new Image();
 raquetaIImage.src = "raquetaI.png";
 
+let ballImage = new Image();
+ballImage.src = "ball.png";
+
 let raquetaDerecha = new raquetaD(
   canvas.width - 115,
   180,
@@ -21,9 +24,14 @@ let raquetaDerecha = new raquetaD(
 );
 let raquetaIzquierda = new raquetaI(-35, 150, 150, 100, raquetaIImage);
 
+
+let ppBall = new ball (700, 300, 30, 20, ballImage);
+
+
 const cargaInicial = () => {
   raquetaDerecha.dibujar();
   raquetaIzquierda.dibujar();
+  ppBall.dibujar();
 };
 
 window.addEventListener("load", cargaInicial);
