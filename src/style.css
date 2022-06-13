@@ -1,11 +1,16 @@
 body {
-  background-color: #6c5b7b;
-
+  background-color: #494d5f;
 }
 
-
 #canvas {
+  background-color: #;
+  border-width: 2px;
+  border-color: #d0bdf4;
+  border-style: solid;
+}
 
-  background-color: #c06c84; 
-
+footer img {
+  width: 30px;
+  height: 30px;
+  text-align: center;
 }

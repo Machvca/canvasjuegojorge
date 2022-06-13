@@ -34,4 +34,27 @@ const cargaInicial = () => {
   ppBall.dibujar();
 };
 
+
+
+  const detectarColision = () => {
+    if (raquetaIzquierda.y == 50) {
+      if (raquetaIzquierda.x < raquetaIzquierda.x && raquetaIzquierda.x + raquetaIzquierda.ancho > ppBall.x) {
+        ppBall.direccionY = "arriba";
+      }
+    }
+  };
+
+
+
+  const moverPelota = () => {
+    ppBall.borrar();
+    ppBall.comprobarRebote();
+    detectarColision();
+    ppBall.dibujar();
+  };
+
+  setInterval(moverPelota, 50);
+
+
+
 window.addEventListener("load", cargaInicial);
