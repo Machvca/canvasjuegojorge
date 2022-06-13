@@ -55,11 +55,21 @@ setInterval(moverPelota, 50);
 const moverPala = (e) => {
   e.preventDefault();
   raquetaIzquierda.borrar();
-  raquetaIzquierda.moverRaquetaI(e.key);
+  raquetaIzquierda.moverRaqueta(e.key);
   raquetaIzquierda.dibujar();
+  
 };
 
+
+// const moverPalaD = (e) => {
+//   e.preventDefault();
+//   raquetaIzquierda.borrar();
+//   raquetaIzquierda.moverRaquetaD(e.key);
+//   raquetaIzquierda.dibujar();
+// };
+
 document.addEventListener("keydown", moverPala);
+// document.addEventListener("keydown", moverPalaD);
 window.addEventListener("load", cargaInicial);
 
 //hacer movimiento de la pala hacia abajo

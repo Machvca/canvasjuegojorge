@@ -16,4 +16,21 @@ class raquetaD {
   borrar() {
     ctx.clearRect(this.x, this.y, this.ancho, this.alto);
   }
-}
+
+  // moverRaquetaD(key) {
+  //   if (key === "ArrowUp") {
+  //     //if (this.y > 0) {
+  //       this.y = this.y - 20;
+  //       //console.log(key);
+  //     }
+    
+
+  //   if (key === "ArrowDown") {
+  //     //if (this.y < 530) {
+  //       this.y = this.y + 20;
+  //     }
+    }
+  
+  
+//}
+

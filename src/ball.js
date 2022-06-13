@@ -28,9 +28,9 @@ class ball {
     if (this.y <= 0) {
       this.direccionY = "abajo";
     }
-    if (this.y >= ctx.canvas.width - this.ancho) {
+    if (this.y >= ctx.canvas.height - this.ancho) {
       this.direccionY = "arriba";
-      //alert("game over");
+      
     }
     if (this.direccionX === "derecha") {
       this.x += 50;
