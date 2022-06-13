@@ -30,7 +30,7 @@ class ball {
     }
     if (this.y >= ctx.canvas.height - this.ancho) {
       this.direccionY = "arriba";
-      
+       
     }
     if (this.direccionX === "derecha") {
       this.x += 50;
