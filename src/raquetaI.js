@@ -16,14 +16,23 @@ class raquetaI {
   }
 
   moverRaquetaI(key) {
-    if (key === "ArrowUp") {
-      this.y = this.y - 20;
-      console.log(key);
+    if (key === "w") {
+      if (this.y > 0) {
+        this.y = this.y - 20;
+        //console.log(key);
+      }
+    }
+
+    if (key === "s") {
+      if (this.y < 530) {
+        this.y = this.y + 20;
+      }
     }
   }
 }
 
-//  moverPala(key) {
+//  ArrowUp , ArrowDown
+//moverPala(key) {
 //     if (key === "ArrowLeft") {
 //       if (this.x > 0) {
 //         this.x = this.x - 20;

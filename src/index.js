@@ -59,7 +59,7 @@ const moverPala = (e) => {
   raquetaIzquierda.dibujar();
 };
 
-document.addEventListener("KeyPress", moverPala);
+document.addEventListener("keydown", moverPala);
 window.addEventListener("load", cargaInicial);
 
 //hacer movimiento de la pala hacia abajo
