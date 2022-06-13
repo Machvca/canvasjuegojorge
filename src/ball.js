@@ -33,7 +33,7 @@ class ball {
        
     }
     if (this.direccionX === "derecha") {
-      this.x += 50;
+      this.x += 10;
     }
     if (this.direccionX === "izquierda") {
       this.x -= 10;

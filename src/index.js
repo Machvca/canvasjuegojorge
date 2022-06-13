@@ -24,7 +24,7 @@ function drawRect(x, y, w, h, color) {
 const net = {
   x: canvas.width / 2 - 1,
   y: 0,
-  width: 2,
+  width: 3,
   height: 10,
   color: "WHITE",
 };
@@ -54,20 +54,22 @@ const cargaInicial = () => {
   drawNet();
 };
 
+setInterval(cargaInicial, 0);
+
 // function render(){
 //   drawRect();
 // }
 
 const detectarColision = () => {
-  if (raquetaIzquierda.y == 100) {
-    if (
-      raquetaIzquierda.x < raquetaIzquierda.x &&
-      raquetaIzquierda.x + raquetaIzquierda.ancho > ppBall.x
-    ) {
-      ppBall.direccionY = "arriba";
+  if (ppBall.y == -100) {
+    // if (
+    //   raquetaIzquierda.x < raquetaIzquierda.x &&
+    //   raquetaIzquierda.x + raquetaIzquierda.ancho > ppBall.x
+    // ) {
+      ppBall.direccionY = "derecha";
     }
   }
-};
+
 
 const moverPelota = () => {
   ppBall.borrar();
