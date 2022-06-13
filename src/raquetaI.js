@@ -5,7 +5,6 @@ class raquetaI {
     this.ancho = ancho;
     this.alto = alto;
     this.imagen = imagen;
-    
   }
 
   dibujar() {
@@ -14,6 +13,13 @@ class raquetaI {
 
   borrar() {
     ctx.clearRect(this.x, this.y, this.ancho, this.alto);
+  }
+
+  moverRaquetaI(key) {
+    if (key === "ArrowUp") {
+      this.y = this.y - 20;
+      console.log(key);
+    }
   }
 }
 

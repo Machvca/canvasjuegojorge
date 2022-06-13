@@ -24,9 +24,7 @@ let raquetaDerecha = new raquetaD(
 );
 let raquetaIzquierda = new raquetaI(-35, 150, 150, 100, raquetaIImage);
 
-
-let ppBall = new ball (700, 300, 30, 20, ballImage);
-
+let ppBall = new ball(700, 300, 30, 20, ballImage);
 
 const cargaInicial = () => {
   raquetaDerecha.dibujar();
@@ -34,27 +32,36 @@ const cargaInicial = () => {
   ppBall.dibujar();
 };
 
-
-
-  const detectarColision = () => {
-    if (raquetaIzquierda.y == 50) {
-      if (raquetaIzquierda.x < raquetaIzquierda.x && raquetaIzquierda.x + raquetaIzquierda.ancho > ppBall.x) {
-        ppBall.direccionY = "arriba";
-      }
+const detectarColision = () => {
+  if (raquetaIzquierda.y == 50) {
+    if (
+      raquetaIzquierda.x < raquetaIzquierda.x &&
+      raquetaIzquierda.x + raquetaIzquierda.ancho > ppBall.x
+    ) {
+      ppBall.direccionY = "arriba";
     }
-  };
+  }
+};
 
+const moverPelota = () => {
+  ppBall.borrar();
+  ppBall.comprobarRebote();
+  detectarColision();
+  ppBall.dibujar();
+};
 
+setInterval(moverPelota, 50);
 
-  const moverPelota = () => {
-    ppBall.borrar();
-    ppBall.comprobarRebote();
-    detectarColision();
-    ppBall.dibujar();
-  };
+const moverPala = (e) => {
+  e.preventDefault();
+  raquetaIzquierda.borrar();
+  raquetaIzquierda.moverRaquetaI(e.key);
+  raquetaIzquierda.dibujar();
+};
 
-  setInterval(moverPelota, 50);
-
-
-
+document.addEventListener("KeyPress", moverPala);
 window.addEventListener("load", cargaInicial);
+
+//hacer movimiento de la pala hacia abajo
+//comprobar tope pala hacia arriba
+//comprobar tope pala hacia abajo
