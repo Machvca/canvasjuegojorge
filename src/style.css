@@ -1,12 +1,13 @@
 body {
-  background-color: #99b898;
+  background-image: linear-gradient(to right, #99b898, #fecea8, #ff847c, #e84a5f, #2a363b);
 }
 
 #canvas {
   background-color: #;
   border-width: 2px;
-  border-color: #fecea8;
+  border-color: white;
   border-style: solid;
+  
 }
 
 footer img {
