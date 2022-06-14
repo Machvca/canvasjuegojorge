@@ -7,6 +7,7 @@ class raquetaD {
     this.imagen = imagen;
     this.direccionX = "derecha";
     this.direccionY = "abajo";
+    
   }
 
   dibujar() {
@@ -19,19 +20,17 @@ class raquetaD {
 
   moverRaquetaD(key) {
     if (key === "ArrowUp") {
-      //if (this.y > 0) {
+      if (this.y > 5) {
         this.y = this.y - 20;
-        //console.log(key);
+        
       }
-    
-
+    }
     if (key === "ArrowDown") {
-      //if (this.y < 530) {
+      if (this.y < 530) {
         this.y = this.y + 20;
+        //console.log(key);
       }
     }
   }
-  
-  
-//}
+  }
 

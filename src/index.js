@@ -1,10 +1,7 @@
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
-//testing
-//context.fillStyle = "red";
-//ctx.fillRect(0, 0, canvas.width, canvas.height);
-//canvas.style.backgroundColor = "darkgreen";
+
 
 let raquetaDImage = new Image();
 raquetaDImage.src = "raquetaD.png";
@@ -38,12 +35,17 @@ function drawNet() {
 
 let raquetaDerecha = new raquetaD(
   canvas.width - 115,
-  180,
-  120,
+  250,
+  115,
   100,
   raquetaDImage
 );
-let raquetaIzquierda = new raquetaI(-35, 150, 150, 100, raquetaIImage);
+let raquetaIzquierda = new raquetaI(
+  -35,
+   250, 
+   140, 
+   100, 
+   raquetaIImage);
 
 let ppBall = new ball(700, 300, 30, 20, ballImage);
 
@@ -52,22 +54,29 @@ const cargaInicial = () => {
   raquetaIzquierda.dibujar();
   ppBall.dibujar();
   drawNet();
+  
 };
 
 setInterval(cargaInicial, 0);
 
-// function render(){
-//   drawRect();
-// }
+
 
 const detectarColision = () => {
-  if (ppBall.y == -100) {
+  if (ppBall.x == 1320) {
     // if (
-    //   raquetaIzquierda.x < raquetaIzquierda.x &&
-    //   raquetaIzquierda.x + raquetaIzquierda.ancho > ppBall.x
+    //   raquetaIzquierda.y < raquetaIzquierda.y &&
+    //   raquetaIzquierda.y + raquetaIzquierda.alto > ppBall.
     // ) {
-      ppBall.direccionY = "derecha";
+      ppBall.direccionX = "izquierda";
     }
+
+     if (ppBall.x == 60) {
+       // if (
+       //   raquetaIzquierda.x < raquetaIzquierda.x &&
+       //   raquetaIzquierda.x + raquetaIzquierda.ancho > ppBall.x
+       // ) {
+       ppBall.direccionX = "derecha";
+     }
   }
 
 
@@ -91,24 +100,13 @@ const moverPala = (e) => {
   raquetaDerecha.dibujar();
 };
 
-// const moverPalaD = (e) => {
-//   e.preventDefault();
-//   raquetaIzquierda.borrar();
-//   raquetaIzquierda.moverRaquetaD(e.key);
-//   raquetaIzquierda.dibujar();
-// };
+
 
 document.addEventListener("keydown", moverPala);
-// document.addEventListener("keydown", moverPalaD);
 window.addEventListener("load", cargaInicial);
 
-//hacer movimiento de la pala hacia abajo
-//comprobar tope pala hacia arriba
-//comprobar tope pala hacia abajo
 
-// function game(){
-//   render();
-// }
 
-// const framePerSecond = 50;
-// setInterval(game,1000/framePerSecond);
+
+
+
