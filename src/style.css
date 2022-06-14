@@ -12,16 +12,40 @@ background-color: blacka2;
   
 }
 
+
+header{
+  display: flex;
+  justify-content: center;
+  font-family: 'Monoton', cursive;
+  font-size: 80px;
+  background: linear-gradient(90deg, #99b898, #fecea8, #ff847c, #e84a5f, #2a363b);
+  background-size: 400%;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: animate 15s linear infinite;
+}
+
+@keyframes animate{
+  0%{ 
+    background-position: 0%;
+  }
+  100%{
+    background-position: 400%;
+  }
+}
+
 .conte{
+
   display: flex;
   justify-content: space-between;
-  font-size: 50px;
+  font-size: 40px;
+ font-family: 'Monoton', cursive;
 }
 
 .contenedor {
   display: flex;
-  justify-content: center;
-  
+  justify-content:center
+
 
 
   /* width: 30px;
@@ -35,11 +59,11 @@ background-color: blacka2;
 }
 
 img{
- 
+
   width: 30px;
   height: 30px;
 }
 
 .gitlog{
-   padding-top: 3px;
+   padding-top: 0px;
 }
