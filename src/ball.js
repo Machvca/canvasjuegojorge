@@ -19,7 +19,7 @@ class ball {
 
   comprobarRebote() {
     //console.log(ctx.canvas.width);
-    if (this.x >= ctx.canvas.width - this.ancho) {
+    if (this.x >= canvas.width - this.ancho) {
       this.direccionX = "izquierda";
     }
     if (this.x <= 0) {
@@ -28,9 +28,8 @@ class ball {
     if (this.y <= 0) {
       this.direccionY = "abajo";
     }
-    if (this.y >= ctx.canvas.height - this.ancho) {
+    if (this.y >= canvas.height - this.ancho) {
       this.direccionY = "arriba";
-       
     }
     if (this.direccionX === "derecha") {
       this.x += 10;

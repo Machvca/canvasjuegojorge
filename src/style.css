@@ -1,7 +1,10 @@
 body {
 
-background-color: rosybrown;
-  /* background-image: linear-gradient(to left,  #e84a5f, #2a363b);  */
+  background-color: #99b898;
+/* background-image: url(../fondocanvas.jpg");
+background-position: center; */
+
+
 }
 
 #canvas {

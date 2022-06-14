@@ -1,8 +1,6 @@
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
-
-
 let raquetaDImage = new Image();
 raquetaDImage.src = "raquetaD.png";
 
@@ -40,45 +38,64 @@ let raquetaDerecha = new raquetaD(
   100,
   raquetaDImage
 );
-let raquetaIzquierda = new raquetaI(
-  -35,
-   250, 
-   140, 
-   100, 
-   raquetaIImage);
+let raquetaIzquierda = new raquetaI(-35, 250, 140, 100, raquetaIImage);
 
 let ppBall = new ball(700, 300, 30, 20, ballImage);
 
 const cargaInicial = () => {
+  detectarColision();
   raquetaDerecha.dibujar();
   raquetaIzquierda.dibujar();
   ppBall.dibujar();
   drawNet();
-  
 };
 
 setInterval(cargaInicial, 0);
 
-
-
 const detectarColision = () => {
-  if (ppBall.x == 1320) {
-    // if (
-    //   raquetaIzquierda.y < raquetaIzquierda.y &&
-    //   raquetaIzquierda.y + raquetaIzquierda.alto > ppBall.
-    // ) {
-      ppBall.direccionX = "izquierda";
-    }
+  if (ppBall.x == 60) {
+    if (
+      raquetaIzquierda.y < ppBall.y &&
+      raquetaIzquierda.y + raquetaIzquierda.alto > ppBall.y
+      
+      // &&
+      // raquetaIzquierda.x < ppBall.x &&
+      // raquetaIzquierda.x + raquetaIzquierda.ancho < ppBall.x
+    ) {
 
-     if (ppBall.x == 60) {
-       // if (
-       //   raquetaIzquierda.x < raquetaIzquierda.x &&
-       //   raquetaIzquierda.x + raquetaIzquierda.ancho > ppBall.x
-       // ) {
-       ppBall.direccionX = "derecha";
-     }
+
+    ppBall.x += 10; 
+      ppBall.direccionY = "arriba";
+      console.log("golpea");
+
+      // if (raquetaIzquierda.x < ppBall.x + ppBall.width &&
+      //    raquetaIzquierda.x + raquetaIzquierda.width > ppBall.x &&
+      //    raquetaIzquierda.y < ppBall.y + ppBall.height &&
+      //    raquetaIzquierda.height + raquetaIzquierda.y > ppBall.y){
+
+      ppBall.direccionX = "derecha";
+    }
   }
 
+  if (ppBall.x == 1300) {
+
+   if (
+     raquetaDerecha.y < ppBall.y &&
+     raquetaDerecha.y + raquetaDerecha.alto > ppBall.y
+   ) {
+     ppBall.direccionX -= 10;
+    ppBall.direccionX = "izquierda";
+  }
+}
+
+  //  if (ppBall.x == 60) {
+  //    // if (
+  //    //   raquetaIzquierda.x < raquetaIzquierda.x &&
+  //    //   raquetaIzquierda.x + raquetaIzquierda.ancho > ppBall.x
+  //    // ) {
+  //    ppBall.direccionX = "derecha";
+  //  }
+};
 
 const moverPelota = () => {
   ppBall.borrar();
@@ -100,13 +117,5 @@ const moverPala = (e) => {
   raquetaDerecha.dibujar();
 };
 
-
-
 document.addEventListener("keydown", moverPala);
 window.addEventListener("load", cargaInicial);
-
-
-
-
-
-
