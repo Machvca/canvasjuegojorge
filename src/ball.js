@@ -24,12 +24,14 @@ class ball {
     }
     if (this.x <= 0) {
       this.direccionX = "derecha";
+      //alert( "game-over");
     }
     if (this.y <= 0) {
       this.direccionY = "abajo";
     }
     if (this.y >= canvas.height - this.ancho) {
       this.direccionY = "arriba";
+      
     }
     if (this.direccionX === "derecha") {
       this.x += 10;
@@ -44,4 +46,9 @@ class ball {
       this.y += 10;
     }
   }
+
+
 }
+
+
+
