@@ -7,6 +7,8 @@ class ball {
     this.imagen = imagen;
     this.direccionX = "derecha";
     this.direccionY = "abajo";
+    this.raquetaRojaPuntuacion = 0;
+    this.raquetaBlancaPuntuacion = 0;
   }
 
   dibujar() {
@@ -18,21 +20,32 @@ class ball {
   }
 
   comprobarRebote() {
-    //console.log(ctx.canvas.width);
     if (this.x >= canvas.width - this.ancho) {
       this.direccionX = "izquierda";
+      this.raquetaBlancaPuntuacion += 1;
+      //console.log(raquetaBlancaPuntuacion);
+      let scoreUno = document.getElementById("scoreUnoo");
+      scoreUno.innerHTML = this.raquetaRojaPuntuacion;
     }
+
     if (this.x <= 0) {
       this.direccionX = "derecha";
-      //alert( "game-over");
+      this.raquetaRojaPuntuacion += 1;
+
+      //console.log(raquetaRojaPuntuacion);
+
+      let scoreDos = document.getElementById("scoreDoss");
+      scoreDos.innerHTML = this.raquetaBlancaPuntuacion;
     }
     if (this.y <= 0) {
       this.direccionY = "abajo";
     }
     if (this.y >= canvas.height - this.ancho) {
       this.direccionY = "arriba";
-      
     }
+
+    //
+
     if (this.direccionX === "derecha") {
       this.x += 10;
     }
@@ -46,26 +59,13 @@ class ball {
       this.y += 10;
     }
 
-
-
-
-let raquetaRojaPuntuacion = 10;
-const scoreUno = document.getElementById("scoreUno");
-scoreUno.innerHTML = raquetaRojaPuntuacion;
-
-let raquetaBlancaPuntuacion = 10;
-const scoreDos = document.getElementById("scoreDos");
-scoreDos.innerHTML = raquetaBlancaPuntuacion;
-
-
-
+    if (
+      this.raquetaRojaPuntuacion === 7 ||
+      this.raquetaBlancaPuntuacion === 7
+    ) {
+      let gameOver = document.getElementById("gameover-screen");
+      console.log();
+      //gameOver.classList.remove("hidden");
+    }
   }
-
-
-
-
-
 }
-
-
-

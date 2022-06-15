@@ -6,9 +6,24 @@ const canvas = document.querySelector("#canvas");
 
 const ctx = canvas.getContext("2d");
 
+
+
+
+
 //pantalla de inicio a juego
 let newGame;
 let checkIfGameIsRunning = false;
+
+//  let raquetaRojaPuntuacion = 0;
+//  let raquetaBlancaPuntuacion = 0;
+
+//  let scoreUno = document.getElementById("scoreUnoo");
+//  scoreUno.innerHTML = raquetaRojaPuntuacion;
+
+//  let scoreDos = document.getElementById("scoreDoss");
+//  scoreDos.innerHTML = raquetaBlancaPuntuacion;
+
+
 const startGame = () => {
   checkIfGameIsRunning = true;
   const canvasDiv = document.getElementById("canvasDiv");
@@ -16,14 +31,9 @@ const startGame = () => {
   const botonStartDiv = document.getElementById("comienzo");
   botonStartDiv.classList.add("hidden");
 
-
-
-
-
   cargaInicial();
+  
 };
-
-
 
 let raquetaDImage = new Image();
 raquetaDImage.src = "raquetaD.png";
@@ -48,6 +58,7 @@ const net = {
   color: "WHITE",
 };
 
+
 // //dibujar la red
 function drawNet() {
   for (let i = 0; i <= canvas.height; i += 15) {
@@ -60,9 +71,13 @@ let raquetaDerecha = new raquetaD(
   250,
   115,
   100,
-  raquetaDImage
+  raquetaDImage,
+ 
+
 );
-let raquetaIzquierda = new raquetaI(-35, 250, 140, 100, raquetaIImage);
+let raquetaIzquierda = new raquetaI(-35, 250, 140, 100, raquetaIImage, 
+ 
+  );
 
 let ppBall = new ball(700, 300, 30, 20, ballImage);
 
@@ -72,40 +87,40 @@ const cargaInicial = () => {
   raquetaIzquierda.dibujar();
   ppBall.dibujar();
   drawNet();
+  
 };
 
 setInterval(cargaInicial, 0);
 
 
-// let raquetaRojaPuntuacion = 10
-//        const scoreUno = document.getElementById("scoreUno");
-//        scoreUno.innerHTML = raquetaRojaPuntuacion;
-
-
 
 
 const detectarColision = () => {
+
+// let raquetaRojaPuntuacion = 0;
+// let raquetaBlancaPuntuacion = 0;
+
+// let scoreUno = document.getElementById("scoreUno");
+// scoreUno.innerHTML = raquetaRojaPuntuacion;
+
+
+// let scoreDos = document.getElementById("scoreDos");
+// scoreDos.innerHTML = raquetaBlancaPuntuacion;
+
+
+
   if (ppBall.x == 60) {
     if (
       raquetaIzquierda.y < ppBall.y &&
       raquetaIzquierda.y + raquetaIzquierda.alto > ppBall.y
-
-      
-
-      // &&
-      // raquetaIzquierda.x < ppBall.x &&
-      // raquetaIzquierda.x + raquetaIzquierda.ancho < ppBall.x
     ) {
-      //ppBall.x += 10;
       ppBall.direccionX = "izquierda";
-
-      // if (raquetaIzquierda.x < ppBall.x + ppBall.width &&
-      //    raquetaIzquierda.x + raquetaIzquierda.width > ppBall.x &&
-      //    raquetaIzquierda.y < ppBall.y + ppBall.height &&
-      //    raquetaIzquierda.height + raquetaIzquierda.y > ppBall.y){
-
-      ppBall.direccionX = "derecha";
+      //ppBall.direccionX = "derecha";
     }
+//SCOREEEEEE
+//     if (ppBall.x <= 0){
+//    raquetaRojaPuntuacion++;
+//  }
   }
 
   if (ppBall.x == 1300) {
@@ -116,22 +131,43 @@ const detectarColision = () => {
       ppBall.direccionX -= 10;
       ppBall.direccionX = "izquierda";
     }
+
+    //SCOREEEEEE
+    // if (ppBall.x >= canvas.width) {
+    //   raquetaBlancaPuntuacion ++;
+    // }
   }
 
-  //  if (ppBall.x == 60) {
-  //    // if (
-  //    //   raquetaIzquierda.x < raquetaIzquierda.x &&
-  //    //   raquetaIzquierda.x + raquetaIzquierda.ancho > ppBall.x
-  //    // ) {
-  //    ppBall.direccionX = "derecha";
-  //  }
 };
 
-// sumarPuntosUno() {
-//    if (ppBall.x == 60){
+// function resetBall(){
+// ppBall.x = canvas.width/2;
+// ppBall.y = canvas.height/2;
 
-//    }
-//   }
+// }
+
+
+// function scoree(){
+// let raquetaRojaPuntuacion = 40;
+// let scoreUno = document.getElementById("scoreUno");
+// scoreUno.innerHTML = raquetaRojaPuntuacion;
+
+// let raquetaBlancaPuntuacion = 40;
+// const scoreDos = document.getElementById("scoreDos");
+// scoreDos.innerHTML = raquetaBlancaPuntuacion;
+
+//  if (ppBall.x <= 0) {
+//    raquetaRojaPuntuacion += 1;
+//    //resetBall();
+//  }
+
+//  if (ppBall.x >= cvs.width) {
+//        raquetaBlancaPuntuacion += 1;
+//        console.log(lol)
+//        //resetBall();
+//      }
+// }
+
 
 const moverPelota = () => {
   ppBall.borrar();
