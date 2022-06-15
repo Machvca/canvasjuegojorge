@@ -14,26 +14,24 @@ const ctx = canvas.getContext("2d");
 let newGame;
 let checkIfGameIsRunning = false;
 
-//  let raquetaRojaPuntuacion = 0;
-//  let raquetaBlancaPuntuacion = 0;
 
-//  let scoreUno = document.getElementById("scoreUnoo");
-//  scoreUno.innerHTML = raquetaRojaPuntuacion;
-
-//  let scoreDos = document.getElementById("scoreDoss");
-//  scoreDos.innerHTML = raquetaBlancaPuntuacion;
 
 
 const startGame = () => {
+
   checkIfGameIsRunning = true;
   const canvasDiv = document.getElementById("canvasDiv");
   canvasDiv.classList.remove("hidden");
+
   const botonStartDiv = document.getElementById("comienzo");
   botonStartDiv.classList.add("hidden");
 
   cargaInicial();
   
 };
+
+
+
 
 let raquetaDImage = new Image();
 raquetaDImage.src = "raquetaD.png";
@@ -44,8 +42,9 @@ raquetaIImage.src = "raquetaI.png";
 let ballImage = new Image();
 ballImage.src = "ball.png";
 
-// //crear una red
 
+
+// //crear una red
 function drawRect(x, y, w, h, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, w, h);
@@ -97,30 +96,15 @@ setInterval(cargaInicial, 0);
 
 const detectarColision = () => {
 
-// let raquetaRojaPuntuacion = 0;
-// let raquetaBlancaPuntuacion = 0;
-
-// let scoreUno = document.getElementById("scoreUno");
-// scoreUno.innerHTML = raquetaRojaPuntuacion;
-
-
-// let scoreDos = document.getElementById("scoreDos");
-// scoreDos.innerHTML = raquetaBlancaPuntuacion;
-
-
-
   if (ppBall.x == 60) {
     if (
       raquetaIzquierda.y < ppBall.y &&
       raquetaIzquierda.y + raquetaIzquierda.alto > ppBall.y
     ) {
       ppBall.direccionX = "izquierda";
-      //ppBall.direccionX = "derecha";
+      ppBall.direccionX = "derecha";
     }
-//SCOREEEEEE
-//     if (ppBall.x <= 0){
-//    raquetaRojaPuntuacion++;
-//  }
+
   }
 
   if (ppBall.x == 1300) {
@@ -132,10 +116,7 @@ const detectarColision = () => {
       ppBall.direccionX = "izquierda";
     }
 
-    //SCOREEEEEE
-    // if (ppBall.x >= canvas.width) {
-    //   raquetaBlancaPuntuacion ++;
-    // }
+  
   }
 
 };
@@ -147,26 +128,6 @@ const detectarColision = () => {
 // }
 
 
-// function scoree(){
-// let raquetaRojaPuntuacion = 40;
-// let scoreUno = document.getElementById("scoreUno");
-// scoreUno.innerHTML = raquetaRojaPuntuacion;
-
-// let raquetaBlancaPuntuacion = 40;
-// const scoreDos = document.getElementById("scoreDos");
-// scoreDos.innerHTML = raquetaBlancaPuntuacion;
-
-//  if (ppBall.x <= 0) {
-//    raquetaRojaPuntuacion += 1;
-//    //resetBall();
-//  }
-
-//  if (ppBall.x >= cvs.width) {
-//        raquetaBlancaPuntuacion += 1;
-//        console.log(lol)
-//        //resetBall();
-//      }
-// }
 
 
 const moverPelota = () => {
@@ -193,8 +154,8 @@ let startButton = document.querySelector("#start-btn");
 startButton.addEventListener("click", startGame);
 
 //re start?¿?
-// let restartButton = document.querySelector("#restart-btn");
-// restartButton.addEventListener("click", startGame);
+let restartButton = document.querySelector("#restart-btn");
+restartButton.addEventListener("click", startGame);
 
 document.addEventListener("keydown", moverPala);
 //window.addEventListener("load", cargaInicial);

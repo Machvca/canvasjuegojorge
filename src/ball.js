@@ -7,8 +7,8 @@ class ball {
     this.imagen = imagen;
     this.direccionX = "derecha";
     this.direccionY = "abajo";
-    this.raquetaRojaPuntuacion = 0;
-    this.raquetaBlancaPuntuacion = 0;
+    this.raquetaRojaPuntuacion = 6;
+    this.raquetaBlancaPuntuacion = 6;
   }
 
   dibujar() {
@@ -18,6 +18,13 @@ class ball {
   borrar() {
     ctx.clearRect(this.x, this.y, this.ancho, this.alto);
   }
+
+
+//   function resetBall(){
+// ppBall.x = canvas.width/2;
+// ppBall.y = canvas.height/2;
+
+// }
 
   comprobarRebote() {
     if (this.x >= canvas.width - this.ancho) {
@@ -62,10 +69,26 @@ class ball {
     if (
       this.raquetaRojaPuntuacion === 7 ||
       this.raquetaBlancaPuntuacion === 7
-    ) {
+    ) 
+    
+    {
       let gameOver = document.getElementById("gameover-screen");
-      console.log();
-      //gameOver.classList.remove("hidden");
-    }
+      gameOver.classList.remove("hidden");
+      
+      const puntuacionMax = document.getElementById("canvas");
+      botonStartDiv.classList.add("hidden");
+      resetBall();
+    };
+      
+
+
+//  const canvasDiv = document.getElementById("canvasDiv");
+//  canvasDiv.classList.remove("hidden");
+//  const botonStartDiv = document.getElementById("comienzo");
+//  botonStartDiv.classList.add("hidden");
+
+
+
+    
   }
 }
