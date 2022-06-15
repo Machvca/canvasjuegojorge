@@ -1,45 +1,38 @@
 let startScreen = document.querySelector("#comienzo");
 
-const restartGame = document.getElementById("restart-btn");
+// const restartGame = document.getElementById("restart-btn");
 
 const canvas = document.querySelector("#canvas");
 
 const ctx = canvas.getContext("2d");
-
 
 //pantalla de inicio a juego
 let newGame;
 let checkIfGameIsRunning = false;
 const startGame = () => {
   checkIfGameIsRunning = true;
-  console.log(checkIfGameIsRunning);
-  if (checkIfGameIsRunning) {
-    startScreen.style.display = "none";
-    canvas.style.display = "flex";
-    //gameOverScreen.style.display = "none";
-  }
-  // ejecutar mi juego
-  newGame = new Game();
-  //console.log(newGame);
-  newGame.gameLoop();
+  const canvasDiv = document.getElementById("canvasDiv");
+  canvasDiv.classList.remove("hidden");
+  const botonStartDiv = document.getElementById("comienzo");
+  botonStartDiv.classList.add("hidden");
+
+
+
+
+
+  cargaInicial();
 };
 
 
 
-
-
-// let contador = 0;
-// const scoreUno = document.querySelector("#scoreUno");
-// document.querySelector("#scoreDos");
-
 let raquetaDImage = new Image();
-raquetaDImage.src = "./raquetaD.png";
+raquetaDImage.src = "raquetaD.png";
 
 let raquetaIImage = new Image();
-raquetaIImage.src = "./raquetaI.png";
+raquetaIImage.src = "raquetaI.png";
 
 let ballImage = new Image();
-ballImage.src = "./ball.png";
+ballImage.src = "ball.png";
 
 // //crear una red
 
@@ -83,11 +76,21 @@ const cargaInicial = () => {
 
 setInterval(cargaInicial, 0);
 
+
+// let raquetaRojaPuntuacion = 10
+//        const scoreUno = document.getElementById("scoreUno");
+//        scoreUno.innerHTML = raquetaRojaPuntuacion;
+
+
+
+
 const detectarColision = () => {
   if (ppBall.x == 60) {
     if (
       raquetaIzquierda.y < ppBall.y &&
       raquetaIzquierda.y + raquetaIzquierda.alto > ppBall.y
+
+      
 
       // &&
       // raquetaIzquierda.x < ppBall.x &&
@@ -130,8 +133,6 @@ const detectarColision = () => {
 //    }
 //   }
 
-
-
 const moverPelota = () => {
   ppBall.borrar();
   ppBall.comprobarRebote();
@@ -152,13 +153,12 @@ const moverPala = (e) => {
   raquetaDerecha.dibujar();
 };
 
-let startButton = document.querySelector("#comienzo");
+let startButton = document.querySelector("#start-btn");
 startButton.addEventListener("click", startGame);
 
-
 //re start?¿?
-let restartButton = document.querySelector("#restart-btn");
-restartButton.addEventListener("click", startGame);
+// let restartButton = document.querySelector("#restart-btn");
+// restartButton.addEventListener("click", startGame);
 
 document.addEventListener("keydown", moverPala);
-window.addEventListener("load", cargaInicial);
+//window.addEventListener("load", cargaInicial);

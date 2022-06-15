@@ -1,83 +1,78 @@
 body {
-margin: 0;
+  margin: 0;
   background-color: #99b898;
-/* background-image: url(../fondocanvas.jpg");
+  /* background-image: url(../fondocanvas.jpg");
 background-position: center; */
-
-
 }
 
-
-
 .comenzar {
-display: flex;
-  flex-direction:row;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 450px;
-
 }
 
-#start-btn, #restart-btn{
-background-color: lightgray;
-font-family: 'Monoton', cursive;
+#start-btn,
+#restart-btn {
+  background-color: lightgray;
+  font-family: "Monoton", cursive;
   color: black;
   padding: 15px;
   font-size: 25px;
   margin-top: 40px;
-  border-radius: 20px; 
-
-
-
-
+  border-radius: 20px;
 }
 
-
-
+.hidden {
+  display: none;
+}
 
 #canvas {
-background-color: blacka2;
+  background-color: blacka2;
   border-width: 2px;
   border-color: white;
   border-style: solid;
-  
 }
 
-
-header{
+header {
   display: flex;
   justify-content: center;
-  font-family: 'Monoton', cursive;
+  font-family: "Monoton", cursive;
   font-size: 90px;
-  background: linear-gradient(90deg, #99b898, #fecea8, #ff847c, #e84a5f, #2a363b);
+  background: linear-gradient(
+    90deg,
+    #99b898,
+    #fecea8,
+    #ff847c,
+    #e84a5f,
+    #2a363b
+  );
   background-size: 400%;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   animation: animate 15s linear infinite;
 }
 
-@keyframes animate{
-  0%{ 
+@keyframes animate {
+  0% {
     background-position: 0%;
   }
-  100%{
+  100% {
     background-position: 400%;
   }
 }
 
-.conte{
-
+.conte {
   display: flex;
   justify-content: space-between;
   font-size: 40px;
- font-family: 'Monoton', cursive;
+  font-family: "Monoton", cursive;
 }
 
 .contenedor {
   display: flex;
-  justify-content:center
-
-
+  justify-content: center;
 
   /* width: 30px;
   height: 30px;
@@ -89,12 +84,11 @@ header{
   height: 35px;
 }
 
-img{
-
+img {
   width: 30px;
   height: 30px;
 }
 
-.gitlog{
-   padding-top: 0px;
+.gitlog {
+  padding-top: 0px;
 }

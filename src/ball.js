@@ -45,7 +45,24 @@ class ball {
     if (this.direccionY === "abajo") {
       this.y += 10;
     }
+
+
+
+
+let raquetaRojaPuntuacion = 10;
+const scoreUno = document.getElementById("scoreUno");
+scoreUno.innerHTML = raquetaRojaPuntuacion;
+
+let raquetaBlancaPuntuacion = 10;
+const scoreDos = document.getElementById("scoreDos");
+scoreDos.innerHTML = raquetaBlancaPuntuacion;
+
+
+
   }
+
+
+
 
 
 }
