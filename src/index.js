@@ -33,13 +33,13 @@ const startGame = () => {
 // document.querySelector("#scoreDos");
 
 let raquetaDImage = new Image();
-raquetaDImage.src = "raquetaD.png";
+raquetaDImage.src = "./raquetaD.png";
 
 let raquetaIImage = new Image();
-raquetaIImage.src = "raquetaI.png";
+raquetaIImage.src = "./raquetaI.png";
 
 let ballImage = new Image();
-ballImage.src = "ball.png";
+ballImage.src = "./ball.png";
 
 // //crear una red
 
