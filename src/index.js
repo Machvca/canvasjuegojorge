@@ -11,24 +11,53 @@ const ctx = canvas.getContext("2d");
 
 
 //pantalla de inicio a juego
-let newGame;
-let checkIfGameIsRunning = false;
+// let newGame;
+// let checkIfGameIsRunning = false;
+
+ cargaInicial = () => {
+   setInterval(moverPelota, 50);
+  detectarColision();
+  raquetaDerecha.dibujar();
+  raquetaIzquierda.dibujar();
+  ppBall.dibujar();
+  drawNet();
+  console.log("soy el console de caraga inicial)")
+};
+
 
 
 
 
 const startGame = () => {
-
+console.log("estoy ejecutandome")
   checkIfGameIsRunning = true;
+
   const canvasDiv = document.getElementById("canvasDiv");
   canvasDiv.classList.remove("hidden");
 
   const botonStartDiv = document.getElementById("comienzo");
   botonStartDiv.classList.add("hidden");
 
-  cargaInicial();
-  
+ 
+  setInterval(cargaInicial, 50);
 };
+
+
+
+//restart
+
+
+
+// const reStartGame = () => {
+//   checkIfGameIsRunning = true;
+//   const canvasDiv = document.getElementById("canvasDiv");
+//   canvasDiv.classList.remove("hidden");
+
+//   const botonStartDiv = document.getElementById("comienzo");
+//   botonStartDiv.classList.add("hidden");
+
+//   cargaInicial();
+// };
 
 
 
@@ -80,18 +109,6 @@ let raquetaIzquierda = new raquetaI(-35, 250, 140, 100, raquetaIImage,
 
 let ppBall = new ball(700, 300, 30, 20, ballImage);
 
-const cargaInicial = () => {
-  detectarColision();
-  raquetaDerecha.dibujar();
-  raquetaIzquierda.dibujar();
-  ppBall.dibujar();
-  drawNet();
-  
-};
-
-setInterval(cargaInicial, 0);
-
-
 
 
 const detectarColision = () => {
@@ -137,7 +154,7 @@ const moverPelota = () => {
   ppBall.dibujar();
 };
 
-setInterval(moverPelota, 50);
+
 
 const moverPala = (e) => {
   e.preventDefault();
@@ -155,7 +172,7 @@ startButton.addEventListener("click", startGame);
 
 //re start?¿?
 let restartButton = document.querySelector("#restart-btn");
-restartButton.addEventListener("click", startGame);
+restartButton.addEventListener("click", startGame );
 
 document.addEventListener("keydown", moverPala);
 //window.addEventListener("load", cargaInicial);

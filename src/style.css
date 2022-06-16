@@ -85,10 +85,11 @@ header {
 }
 
 img {
+
   width: 30px;
   height: 30px;
 }
 
 .gitlog {
-  padding-top: 0px;
+  padding-top: px;
 }

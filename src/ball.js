@@ -7,8 +7,8 @@ class ball {
     this.imagen = imagen;
     this.direccionX = "derecha";
     this.direccionY = "abajo";
-    this.raquetaRojaPuntuacion = 6;
-    this.raquetaBlancaPuntuacion = 6;
+    this.raquetaRojaPuntuacion = 0;
+    this.raquetaBlancaPuntuacion = 0;
   }
 
   dibujar() {
@@ -19,14 +19,15 @@ class ball {
     ctx.clearRect(this.x, this.y, this.ancho, this.alto);
   }
 
+  //   function resetBall(){
+  // ppBall.x = canvas.width/2;
+  // ppBall.y = canvas.height/2;
 
-//   function resetBall(){
-// ppBall.x = canvas.width/2;
-// ppBall.y = canvas.height/2;
-
-// }
+  // }
 
   comprobarRebote() {
+
+    
     if (this.x >= canvas.width - this.ancho) {
       this.direccionX = "izquierda";
       this.raquetaBlancaPuntuacion += 1;
@@ -39,7 +40,7 @@ class ball {
       this.direccionX = "derecha";
       this.raquetaRojaPuntuacion += 1;
 
-      //console.log(raquetaRojaPuntuacion);
+      console.log("soy comprobar reboto");
 
       let scoreDos = document.getElementById("scoreDoss");
       scoreDos.innerHTML = this.raquetaBlancaPuntuacion;
@@ -54,41 +55,40 @@ class ball {
     //
 
     if (this.direccionX === "derecha") {
-      this.x += 10;
+      this.x += .2;
     }
     if (this.direccionX === "izquierda") {
-      this.x -= 10;
+      this.x -= .2;
     }
     if (this.direccionY === "arriba") {
-      this.y -= 10;
+      this.y -= .2;
     }
     if (this.direccionY === "abajo") {
-      this.y += 10;
+      this.y += .2;
     }
 
     if (
       this.raquetaRojaPuntuacion === 7 ||
       this.raquetaBlancaPuntuacion === 7
-    ) 
-    
-    {
+    ) {
       let gameOver = document.getElementById("gameover-screen");
       gameOver.classList.remove("hidden");
-      
-      const puntuacionMax = document.getElementById("canvas");
-      botonStartDiv.classList.add("hidden");
-      resetBall();
-    };
-      
 
+      // const puntuacionMax = document.getElementById("canvas");
 
-//  const canvasDiv = document.getElementById("canvasDiv");
-//  canvasDiv.classList.remove("hidden");
-//  const botonStartDiv = document.getElementById("comienzo");
-//  botonStartDiv.classList.add("hidden");
+      // const botonStartDiv = document.getElementById("comienzo");
+      // botonStartDiv.classList.add("hidden");
 
+      //resetBall();
+    }
 
-
-    
+    //  const canvasDiv = document.getElementById("canvasDiv");
+    //  canvasDiv.classList.remove("hidden");
+    //  const botonStartDiv = document.getElementById("comienzo");
+    //  botonStartDiv.classList.add("hidden");
   }
 }
+
+//resetball
+// hidden
+// bottones

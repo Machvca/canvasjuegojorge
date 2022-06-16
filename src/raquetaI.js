@@ -25,7 +25,7 @@ class raquetaI {
     }
 
     if (key === "s") {
-      if (this.y < 500) {
+      if (this.y < 530) {
         this.y = this.y + 20;
       }
     }
