@@ -88,16 +88,16 @@ class ball {
     }
 
     if (this.direccionX === "derecha") {
-      this.x += 1;
+      this.x += .3;
     }
     if (this.direccionX === "izquierda") {
-      this.x -= 1;
+      this.x -= .3;
     }
     if (this.direccionY === "arriba") {
-      this.y -= 1;
+      this.y -= .3;
     }
     if (this.direccionY === "abajo") {
-      this.y += 1;
+      this.y += .3;
     }
 
     if (this.raquetaRojaPuntuacion == 8 || this.raquetaBlancaPuntuacion == 8) {
@@ -108,11 +108,9 @@ class ball {
       const botonStartDiv = document.getElementById("canvasDiv");
       botonStartDiv.classList.add("hidden");
 
-      //resetBall();
+      
     }
   }
 }
 
-//resetball
 
-// bottones

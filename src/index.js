@@ -8,13 +8,13 @@ const ctx = canvas.getContext("2d");
 
 
 let raquetaDImage = new Image();
-raquetaDImage.src = "raquetaD.png";
+raquetaDImage.src = "src/raquetaD.png";
 
 let raquetaIImage = new Image();
-raquetaIImage.src = "raquetaI.png";
+raquetaIImage.src = "src/raquetaI.png";
 
 let ballImage = new Image();
-ballImage.src = "ball.png";
+ballImage.src = "src/ball.png";
 
 
 
