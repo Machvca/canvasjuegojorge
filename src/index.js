@@ -21,13 +21,13 @@ ballImage.src = "src/ball.png";
 
 
  cargaInicial = () => {
-  setInterval(moverPelota, 100);
+  setInterval(moverPelota, 500);
   detectarColision();
   raquetaDerecha.dibujar();
   raquetaIzquierda.dibujar();
   ppBall.dibujar();
   drawNet();
-  //console.log("soy el console de caraga inicial)")
+
 };
 
 
@@ -35,7 +35,7 @@ ballImage.src = "src/ball.png";
 
 
 const startGame = () => {
-//console.log("estoy ejecutandome")
+
   checkIfGameIsRunning = true;
 
   const canvasDiv = document.getElementById("canvasDiv");
@@ -57,7 +57,7 @@ gameOverr.classList.add("hidden");
 
 
 
-// //crear una red
+// funcion crear una red
 function drawRect(x, y, w, h, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, w, h);

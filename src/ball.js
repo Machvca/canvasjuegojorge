@@ -7,8 +7,8 @@ class ball {
     this.imagen = imagen;
     this.direccionX = "derecha";
     this.direccionY = "abajo";
-    this.raquetaRojaPuntuacion = 7;
-    this.raquetaBlancaPuntuacion = 7;
+    this.raquetaRojaPuntuacion = 0;
+    this.raquetaBlancaPuntuacion = 0;
   }
 
   dibujar() {
