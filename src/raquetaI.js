@@ -19,14 +19,14 @@ class raquetaI {
   moverRaquetaI(key) {
     if (key === "w") {
       if (this.y > 0) {
-        this.y = this.y - 20;
+        this.y = this.y - 40;
        
       }
     }
 
     if (key === "s") {
-      if (this.y < 530) {
-        this.y = this.y + 20;
+      if (this.y < 570) {
+        this.y = this.y + 40;
       }
     }
   }

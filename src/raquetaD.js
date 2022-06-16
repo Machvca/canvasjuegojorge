@@ -26,7 +26,7 @@ class raquetaD {
       }
     }
     if (key === "ArrowDown") {
-      if (this.y < 530) {
+      if (this.y < 540) {
         this.y = this.y + 40;
         
       }

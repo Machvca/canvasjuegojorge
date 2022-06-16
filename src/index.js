@@ -15,7 +15,7 @@ const ctx = canvas.getContext("2d");
 // let checkIfGameIsRunning = false;
 
  cargaInicial = () => {
-   setInterval(moverPelota, 500);
+   setInterval(moverPelota, 700);
   detectarColision();
   raquetaDerecha.dibujar();
   raquetaIzquierda.dibujar();
@@ -38,8 +38,13 @@ console.log("estoy ejecutandome")
   const botonStartDiv = document.getElementById("comienzo");
   botonStartDiv.classList.add("hidden");
 
+  
+let gameOverr = document.getElementById("gameover-screen");
+gameOverr.classList.add("hidden");
  
   setInterval(cargaInicial, 50);
+
+
 };
 
 
