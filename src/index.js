@@ -148,7 +148,9 @@ startButton.addEventListener("click", startGame);
 
 
 let restartButton = document.querySelector("#restart-btn");
-restartButton.addEventListener("click", startGame);
+restartButton.addEventListener("click", ()=>{
+  window.location.reload()
+});
 
 document.addEventListener("keydown", moverPala);
 

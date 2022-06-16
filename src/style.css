@@ -14,15 +14,32 @@ body {
 
 #start-btn,
 #restart-btn {
-  background-color: lightgray;
+  background-image: linear-gradient(to right,  #99b898,
+    #fecea8,
+    #ff847c,
+    #e84a5f,);
+
+    transition: 1s background-image ease-in-out;
+
+
+
   font-family: "Monoton", cursive;
   color: black;
   padding: 15px;
   font-size: 25px;
   margin-top: 40px;
   border-radius: 20px;
-  
 }
+
+#start-btn,
+#restart-btn: hover{
+background-image: linear-gradient(to right, #e84a5f, #99b898, #ff847c,#fecea8);
+    
+    
+
+}
+  
+
 
 .hidden {
   display: none;
