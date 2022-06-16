@@ -21,14 +21,14 @@ class raquetaD {
   moverRaquetaD(key) {
     if (key === "ArrowUp") {
       if (this.y > 5) {
-        this.y = this.y - 20;
+        this.y = this.y - 40;
         
       }
     }
     if (key === "ArrowDown") {
       if (this.y < 530) {
-        this.y = this.y + 20;
-        //console.log(key);
+        this.y = this.y + 40;
+        
       }
     }
   }

@@ -19,11 +19,11 @@ class ball {
     ctx.clearRect(this.x, this.y, this.ancho, this.alto);
   }
 
-  //   function resetBall(){
-  // ppBall.x = canvas.width/2;
-  // ppBall.y = canvas.height/2;
-
-  // }
+//    resetBall() {
+//   this.x = canvas.width/2;
+//   this.y = canvas.height/2;
+// console.log(resetearbola);
+//  }
 
   detectarColision = (otroObjeto) => {
     if (otroObjeto.y + otroObjeto.alto < this.y) {
@@ -76,6 +76,7 @@ console.log(this.comprobarPosicionEnCanvas());
 
       let scoreDos = document.getElementById("scoreDoss");
       scoreDos.innerHTML = this.raquetaBlancaPuntuacion;
+      //resetBall();
     }
     if (this.y <= 0) {
       this.direccionY = "abajo";
@@ -87,16 +88,16 @@ console.log(this.comprobarPosicionEnCanvas());
     //
 
     if (this.direccionX === "derecha") {
-      this.x += 0.2;
+      this.x += 1;
     }
     if (this.direccionX === "izquierda") {
-      this.x -= 0.2;
+      this.x -= 1;
     }
     if (this.direccionY === "arriba") {
-      this.y -= 0.2;
+      this.y -= 1;
     }
     if (this.direccionY === "abajo") {
-      this.y += 0.2;
+      this.y += 1;
     }
 
     if (
@@ -106,21 +107,17 @@ console.log(this.comprobarPosicionEnCanvas());
       let gameOver = document.getElementById("gameover-screen");
       gameOver.classList.remove("hidden");
 
-      // const puntuacionMax = document.getElementById("canvas");
 
-      // const botonStartDiv = document.getElementById("comienzo");
-      // botonStartDiv.classList.add("hidden");
+      const botonStartDiv = document.getElementById("canvasDiv");
+      botonStartDiv.classList.add("hidden");
 
       //resetBall();
     }
 
-    //  const canvasDiv = document.getElementById("canvasDiv");
-    //  canvasDiv.classList.remove("hidden");
-    //  const botonStartDiv = document.getElementById("comienzo");
-    //  botonStartDiv.classList.add("hidden");
+  
   }
 }
 
 //resetball
-// hidden
+
 // bottones

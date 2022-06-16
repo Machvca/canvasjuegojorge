@@ -15,7 +15,7 @@ const ctx = canvas.getContext("2d");
 // let checkIfGameIsRunning = false;
 
  cargaInicial = () => {
-   setInterval(moverPelota, 1000);
+   setInterval(moverPelota, 500);
   detectarColision();
   raquetaDerecha.dibujar();
   raquetaIzquierda.dibujar();
@@ -119,16 +119,7 @@ let ppBall = new ball(700, 300, 30, 20, ballImage);
 
 const detectarColision = () => {
 
-  // if (ppBall.x == 60) {
-  //   if (
-  //     raquetaIzquierda.y < ppBall.y &&
-  //     raquetaIzquierda.y + raquetaIzquierda.alto > ppBall.y
-  //   ) {
-  //     ppBall.direccionX +=  10;
-  //     ppBall.direccionX = "derecha";
-  //   }
-
-  // }
+  
 if (ppBall.detectarColision(raquetaIzquierda)) {
   ppBall.direccionX += 10;
   ppBall.direccionX = "derecha";
@@ -140,26 +131,10 @@ if (ppBall.detectarColision(raquetaDerecha)) {
   ppBall.direccionX -= 10;
   ppBall.direccionX = "izquierda";
 }
-  // if (ppBall.x == 1300) {
-  //   if (
-  //     raquetaDerecha.y < ppBall.y &&
-  //     raquetaDerecha.y + raquetaDerecha.alto > ppBall.y
-  //   ) {
-  //     ppBall.direccionX -= 10;
-  //     ppBall.direccionX = "izquierda";
-  //     console.log("estoy colisionando")
-  //   }
 
-  
-  // }
 
 };
 
-// function resetBall(){
-// ppBall.x = canvas.width/2;
-// ppBall.y = canvas.height/2;
-
-// }
 
 
 
@@ -192,4 +167,4 @@ let restartButton = document.querySelector("#restart-btn");
 restartButton.addEventListener("click", startGame);
 
 document.addEventListener("keydown", moverPala);
-//window.addEventListener("load", cargaInicial);
+

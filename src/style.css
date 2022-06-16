@@ -1,8 +1,7 @@
 body {
   margin: 0;
   background-color: #99b898;
-  /* background-image: url(../fondocanvas.jpg");
-background-position: center; */
+  
 }
 
 .comenzar {
@@ -22,6 +21,7 @@ background-position: center; */
   font-size: 25px;
   margin-top: 40px;
   border-radius: 20px;
+  
 }
 
 .hidden {
@@ -54,6 +54,8 @@ header {
   animation: animate 15s linear infinite;
 }
 
+
+
 @keyframes animate {
   0% {
     background-position: 0%;
@@ -74,9 +76,7 @@ header {
   display: flex;
   justify-content: center;
 
-  /* width: 30px;
-  height: 30px;
-  text-align: center; */
+
 }
 
 .linkedin {
@@ -93,3 +93,5 @@ img {
 .gitlog {
   padding-top: px;
 }
+
+
