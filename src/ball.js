@@ -7,8 +7,8 @@ class ball {
     this.imagen = imagen;
     this.direccionX = "derecha";
     this.direccionY = "abajo";
-    this.raquetaRojaPuntuacion = 0;
-    this.raquetaBlancaPuntuacion = 0;
+    this.raquetaRojaPuntuacion = 7;
+    this.raquetaBlancaPuntuacion = 7;
   }
 
   dibujar() {
@@ -19,11 +19,13 @@ class ball {
     ctx.clearRect(this.x, this.y, this.ancho, this.alto);
   }
 
-//    resetBall() {
-//   this.x = canvas.width/2;
-//   this.y = canvas.height/2;
-// console.log(resetearbola);
-//  }
+  resetBall() {
+    this.x = canvas.width / 2;
+    this.y = canvas.height / 2;
+    this.dibujar();
+    this.borrar();
+   
+  }
 
   detectarColision = (otroObjeto) => {
     if (otroObjeto.y + otroObjeto.alto < this.y) {
@@ -59,24 +61,24 @@ class ball {
   }
 
   comprobarRebote() {
-console.log(this.comprobarPosicionEnCanvas());
-    if (this.comprobarPosicionEnCanvas()=== "derecha") {
-    // if (this.x >= canvas.width - this.ancho) {
-    this.direccionX = "izquierda";
+    //console.log(this.comprobarPosicionEnCanvas());
+    if (this.comprobarPosicionEnCanvas() === "derecha") {
+      // if (this.x >= canvas.width - this.ancho) {
+      this.direccionX = "izquierda";
       this.raquetaBlancaPuntuacion += 1;
-
+      this.resetBall();
       let scoreUno = document.getElementById("scoreUnoo");
       scoreUno.innerHTML = this.raquetaRojaPuntuacion;
     }
 
-
     if (this.x <= 0) {
       this.direccionX = "derecha";
       this.raquetaRojaPuntuacion += 1;
+      console.log(this.raquetaRojaPuntuacion);
+      this.resetBall();
 
       let scoreDos = document.getElementById("scoreDoss");
       scoreDos.innerHTML = this.raquetaBlancaPuntuacion;
-      //resetBall();
     }
     if (this.y <= 0) {
       this.direccionY = "abajo";
@@ -84,8 +86,6 @@ console.log(this.comprobarPosicionEnCanvas());
     if (this.y >= canvas.height - this.ancho) {
       this.direccionY = "arriba";
     }
-
-    //
 
     if (this.direccionX === "derecha") {
       this.x += 1;
@@ -100,21 +100,16 @@ console.log(this.comprobarPosicionEnCanvas());
       this.y += 1;
     }
 
-    if (
-      this.raquetaRojaPuntuacion === 7 ||
-      this.raquetaBlancaPuntuacion === 7
-    ) {
+    if (this.raquetaRojaPuntuacion == 8 || this.raquetaBlancaPuntuacion == 8) {
       let gameOver = document.getElementById("gameover-screen");
       gameOver.classList.remove("hidden");
-
-
+      gameOver.classList.add("gameover-screen")
+      
       const botonStartDiv = document.getElementById("canvasDiv");
       botonStartDiv.classList.add("hidden");
 
       //resetBall();
     }
-
-  
   }
 }
 

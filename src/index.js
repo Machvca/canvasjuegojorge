@@ -7,66 +7,6 @@ const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
 
-
-
-
-//pantalla de inicio a juego
-// let newGame;
-// let checkIfGameIsRunning = false;
-
- cargaInicial = () => {
-   setInterval(moverPelota, 700);
-  detectarColision();
-  raquetaDerecha.dibujar();
-  raquetaIzquierda.dibujar();
-  ppBall.dibujar();
-  drawNet();
-  console.log("soy el console de caraga inicial)")
-};
-
-
-
-
-
-const startGame = () => {
-console.log("estoy ejecutandome")
-  checkIfGameIsRunning = true;
-
-  const canvasDiv = document.getElementById("canvasDiv");
-  canvasDiv.classList.remove("hidden");
-
-  const botonStartDiv = document.getElementById("comienzo");
-  botonStartDiv.classList.add("hidden");
-
-  
-let gameOverr = document.getElementById("gameover-screen");
-gameOverr.classList.add("hidden");
- 
-  setInterval(cargaInicial, 50);
-
-
-};
-
-
-
-//restart
-
-
-
-// const reStartGame = () => {
-//   checkIfGameIsRunning = true;
-//   const canvasDiv = document.getElementById("canvasDiv");
-//   canvasDiv.classList.remove("hidden");
-
-//   const botonStartDiv = document.getElementById("comienzo");
-//   botonStartDiv.classList.add("hidden");
-
-//   cargaInicial();
-// };
-
-
-
-
 let raquetaDImage = new Image();
 raquetaDImage.src = "raquetaD.png";
 
@@ -75,6 +15,45 @@ raquetaIImage.src = "raquetaI.png";
 
 let ballImage = new Image();
 ballImage.src = "ball.png";
+
+
+
+
+
+ cargaInicial = () => {
+  setInterval(moverPelota, 100);
+  detectarColision();
+  raquetaDerecha.dibujar();
+  raquetaIzquierda.dibujar();
+  ppBall.dibujar();
+  drawNet();
+  //console.log("soy el console de caraga inicial)")
+};
+
+
+
+
+
+const startGame = () => {
+//console.log("estoy ejecutandome")
+  checkIfGameIsRunning = true;
+
+  const canvasDiv = document.getElementById("canvasDiv");
+  canvasDiv.classList.remove("hidden");
+ 
+  const botonStartDiv = document.getElementById("comienzo");
+  botonStartDiv.classList.add("hidden");
+
+  
+let gameOverr = document.getElementById("gameover-screen");
+gameOverr.classList.add("hidden");
+ gameOverr.classList.remove("gameover-screen")
+ 
+  setInterval(cargaInicial, 50);
+};
+
+
+
 
 
 
@@ -167,7 +146,7 @@ const moverPala = (e) => {
 let startButton = document.querySelector("#start-btn");
 startButton.addEventListener("click", startGame);
 
-//re start?¿?
+
 let restartButton = document.querySelector("#restart-btn");
 restartButton.addEventListener("click", startGame);
 
